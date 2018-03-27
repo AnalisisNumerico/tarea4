@@ -18,7 +18,6 @@
  */
 
 #include "Matrix.hpp"
-#include "Allocator.hpp"
 
 // Explicit instantiation of all methods of Matrix
 
@@ -275,5 +274,49 @@ void testArithmetic() {
 BOOST_AUTO_TEST_CASE(Arithmetic) {
   dispatchTest(testArithmetic);  
 }
-  
+
+
+template<class M>
+void testMatrixMultiplication() {
+  // == and !=
+
+  M a = { {2, 0},
+          {1, 2} };
+
+  M b = { {1},
+          {0},
+          {2}};
+
+  try {
+    M c = a*b;
+    BOOST_CHECK(false && "solver should catch invalid product operand size");
+  } catch(anpi::Exception exc) {
+    BOOST_CHECK(true && "successfully catched");
+  }
+
+  b = {{1, 2},
+       {3, 4}};
+  M c = { {2,  4},
+          {7, 10} };
+  M d = a*b;
+
+  BOOST_CHECK(c == d);
+
+  std::cout << c[0][0] << std::endl;
+  std::cout << c[1][0] << std::endl;
+  std::cout << c[0][1] << std::endl;
+  std::cout << c[1][1] << std::endl;
+
+  std::cout << d[0][0] << std::endl;
+  std::cout << d[1][0] << std::endl;
+  std::cout << d[0][1] << std::endl;
+  std::cout << d[1][1] << std::endl;
+
+}
+
+BOOST_AUTO_TEST_CASE(MatrixMultiplication) {
+    dispatchTest(testMatrixMultiplication);
+}
+
+
 BOOST_AUTO_TEST_SUITE_END()

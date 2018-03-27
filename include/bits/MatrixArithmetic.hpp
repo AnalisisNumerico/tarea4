@@ -114,6 +114,47 @@ namespace anpi
       }
     }
 
+    template<typename T,class Alloc>
+    inline void product(const Matrix<T,Alloc>& a,
+                         const Matrix<T,Alloc>& b,
+                         Matrix<T,Alloc>& c) {
+
+      c.allocate(a.rows(),b.cols());
+
+      const T* aptr = a.data();
+      const T* bptr = b.data();
+      T* here        = c.data();
+
+      int aRows = a.rows();
+      int aCols = a.cols();
+      int bCols = b.cols();
+
+      if(a.cols() == b.rows()) {
+        Matrix<T,Alloc> result(a.rows(),a.cols(),anpi::DoNotInitialize);
+        for(int row = 0; row < aRows; row++) {
+          for(int column = 0; column < bCols; column++) {
+            for(int index = 0; index < aCols; index++) {
+              //c[row][column] += a[row][index] * b[index][column];
+              //std::cout << "a: " << aptr << " " << *aptr << std::endl;
+              //std::cout << "b: " <<  bptr << " " << *bptr << std::endl;
+              *here += *aptr++ * *bptr;
+              bptr += b.dcols();
+              //std::cout << "here: " << here  << " " << *here << std::endl;
+            }
+            here++;
+            bptr = b.data();
+            bptr += column;
+          }
+          //here += a.dcols() - aCols;
+          //bptr += b.dcols() - bCols;
+          //here ++;
+          aptr += a.dcols() - a.cols();
+          here += c.dcols() - c.cols();
+        }
+
+      }
+
+    }
   } // namespace fallback
 
 
@@ -396,6 +437,13 @@ namespace anpi
                          const Matrix<T,Alloc>& b) {
 
       ::anpi::fallback::subtract(a,b);
+    }
+
+    template<typename T,class Alloc>
+    inline void product(const Matrix<T,Alloc>& a,
+                         const Matrix<T,Alloc>& b,
+                         Matrix<T,Alloc>& c) {
+      ::anpi::fallback::product(a,b,c);
     }
   } // namespace simd
 

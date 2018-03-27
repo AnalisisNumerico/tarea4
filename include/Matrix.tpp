@@ -9,9 +9,9 @@
  */
 
 #include "bits/MatrixArithmetic.hpp"
+#include "Exception.hpp"
 
-namespace anpi
-{
+namespace anpi {
 
   // -------------------------------------------
   // Implementation of Matrix::_Matrix_impl
@@ -424,9 +424,38 @@ namespace anpi
   template<typename T,class Alloc>
   Matrix<T,Alloc> operator*(const Matrix<T,Alloc>& a,
                             const Matrix<T,Alloc>& b) {
-    
-    
-    assert(false && "Not implemented yet");
+    if (a.cols() == b.rows()) {
+      Matrix<T,Alloc> c(a.rows(),b.cols(),anpi::DoNotInitialize);
+      ::anpi::aimpl::product(a,b,c);
+      return c;
+    }
+
+    else {
+      throw anpi::Exception("Invalid multiplication operands size");
+    }
+
+
+    /*
+    int aRows = a.rows();
+    int aCols = a.cols();
+    int bCols = b.cols();
+
+    if(aCols == b.rows()) {
+      Matrix<T,Alloc> result(a.rows(),a.cols(),anpi::DoNotInitialize);
+      for(int row = 0; row < aRows; row++) {
+        for(int column = 0; column < bCols; column++) {
+          for(int index = 0; index < aCols; index++) {
+            result[row][column] += a[row][index] * b[index][column];
+          }
+        }
+      }
+      return result;
+    }
+    else {
+      throw anpi::Exception("To be implemented yet");
+      assert(false && "Not implemented yet , ERROR "); //<<<<<<<<<<<<<<<<<<, elimnar
+    }
+    */
   }
 
   
