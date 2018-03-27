@@ -302,16 +302,6 @@ void testMatrixMultiplication() {
 
   BOOST_CHECK(c == d);
 
-  std::cout << c[0][0] << std::endl;
-  std::cout << c[1][0] << std::endl;
-  std::cout << c[0][1] << std::endl;
-  std::cout << c[1][1] << std::endl;
-
-  std::cout << d[0][0] << std::endl;
-  std::cout << d[1][0] << std::endl;
-  std::cout << d[0][1] << std::endl;
-  std::cout << d[1][1] << std::endl;
-
 }
 
 BOOST_AUTO_TEST_CASE(MatrixMultiplication) {

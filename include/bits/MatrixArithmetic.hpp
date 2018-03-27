@@ -134,26 +134,11 @@ namespace anpi
         for(int row = 0; row < aRows; row++) {
           for(int column = 0; column < bCols; column++) {
             for(int index = 0; index < aCols; index++) {
-              //c[row][column] += a[row][index] * b[index][column];
-              //std::cout << "a: " << aptr << " " << *aptr << std::endl;
-              //std::cout << "b: " <<  bptr << " " << *bptr << std::endl;
-              *here += *aptr++ * *bptr;
-              bptr += b.dcols();
-              //std::cout << "here: " << here  << " " << *here << std::endl;
+              c[row][column] += a[row][index] * b[index][column];
             }
-            here++;
-            bptr = b.data();
-            bptr += column;
           }
-          //here += a.dcols() - aCols;
-          //bptr += b.dcols() - bCols;
-          //here ++;
-          aptr += a.dcols() - a.cols();
-          here += c.dcols() - c.cols();
         }
-
       }
-
     }
   } // namespace fallback
 
