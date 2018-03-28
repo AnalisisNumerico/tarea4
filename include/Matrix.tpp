@@ -421,6 +421,19 @@ namespace anpi {
   }
 
   // TODO: Solucionar en la Tarea 04 (faltan otros operadores)
+
+  template<typename T,class Alloc>
+  Matrix<T,Alloc>& Matrix<T,Alloc>::operator*=(const Matrix<T,Alloc>& other) {
+
+    if (this->cols() == other.rows()) {
+      ::anpi::aimpl::product(*this, other);
+      return *this;
+    }
+    else {
+      throw anpi::Exception("Invalid multiplication operands size");
+    }
+  }
+
   template<typename T,class Alloc>
   Matrix<T,Alloc> operator*(const Matrix<T,Alloc>& a,
                             const Matrix<T,Alloc>& b) {

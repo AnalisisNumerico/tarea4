@@ -239,9 +239,9 @@ void testArithmetic() {
     
     M c(a);
     c+=b;
-    BOOST_CHECK(c==r );
+    BOOST_CHECK(c==r);
     c=a+b;
-    BOOST_CHECK(c==r );
+    BOOST_CHECK(c==r);
 
 
     c=M{ {1,2,3},{ 4, 5, 6} } + b;
@@ -301,6 +301,10 @@ void testMatrixMultiplication() {
   M d = a*b;
 
   BOOST_CHECK(c == d);
+
+  a *= b;
+
+  BOOST_CHECK(a == c);
 
 }
 

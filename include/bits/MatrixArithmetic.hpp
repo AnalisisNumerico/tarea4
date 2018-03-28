@@ -114,6 +114,32 @@ namespace anpi
       }
     }
 
+    // In-place implementation a = a*b
+    template<typename T,class Alloc>
+    inline void product(Matrix<T,Alloc>& a,
+                         const Matrix<T,Alloc>& b) {
+
+      Matrix<T,Alloc> c(a.rows(),b.cols());
+      c.allocate(a.rows(),b.cols());
+
+      int aRows = a.rows();
+      int aCols = a.cols();
+      int bCols = b.cols();
+
+      for(int row = 0; row < aRows; row++) {
+        for(int column = 0; column < bCols; column++) {
+          for(int index = 0; index < aCols; index++) {
+            c[row][column] += a[row][index] * b[index][column];
+          }
+        }
+      }
+
+      a=std::move(c);
+
+    }
+
+
+    // In-copy implementation c = a * b
     template<typename T,class Alloc>
     inline void product(const Matrix<T,Alloc>& a,
                          const Matrix<T,Alloc>& b,
@@ -121,24 +147,18 @@ namespace anpi
 
       c.allocate(a.rows(),b.cols());
 
-      const T* aptr = a.data();
-      const T* bptr = b.data();
-      T* here        = c.data();
-
       int aRows = a.rows();
       int aCols = a.cols();
       int bCols = b.cols();
 
-      if(a.cols() == b.rows()) {
-        Matrix<T,Alloc> result(a.rows(),a.cols(),anpi::DoNotInitialize);
-        for(int row = 0; row < aRows; row++) {
-          for(int column = 0; column < bCols; column++) {
-            for(int index = 0; index < aCols; index++) {
-              c[row][column] += a[row][index] * b[index][column];
-            }
+      for(int row = 0; row < aRows; row++) {
+        for(int column = 0; column < bCols; column++) {
+          for(int index = 0; index < aCols; index++) {
+            c[row][column] += a[row][index] * b[index][column];
           }
         }
       }
+
     }
   } // namespace fallback
 
@@ -425,10 +445,18 @@ namespace anpi
     }
 
     template<typename T,class Alloc>
+    // In-place implementation c = a*b
     inline void product(const Matrix<T,Alloc>& a,
                          const Matrix<T,Alloc>& b,
                          Matrix<T,Alloc>& c) {
       ::anpi::fallback::product(a,b,c);
+    }
+
+    template<typename T,class Alloc>
+    // In-copy implementation a = a*b
+    inline void product(Matrix<T,Alloc>& a,
+                        const Matrix<T,Alloc>& b) {
+      ::anpi::fallback::product(a,b);
     }
   } // namespace simd
 
