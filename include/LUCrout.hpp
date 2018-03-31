@@ -11,6 +11,7 @@
 #include <cmath>
 #include <limits>
 #include <functional>
+#include <iostream>
 
 #include "Exception.hpp"
 #include "Matrix.hpp"
@@ -32,7 +33,39 @@ namespace anpi {
                    Matrix<T>& L,
                    Matrix<T>& U) {
 
-    throw anpi::Exception("To be implemented yet");
+    if (LU.cols() == LU.rows()) {
+
+      int luCols = LU.cols();
+      int luRows = LU.rows();
+
+      anpi::Matrix<T> u(LU.rows(),LU.cols());
+
+      for(int i = 0; i < luRows; i++) { //diagonal
+        u[i][i] = T(1);
+      }
+
+      for(int j = 1; j < luCols; j++) {
+        for(int i = 0; i < j; i++) {
+          u[i][j] = LU[i][j];
+        }
+      }
+
+      U = u;
+
+      anpi::Matrix<T> l(LU.rows(),LU.cols());
+
+      for(int i = 0; i < luRows; i++) {
+        for(int j = 0; j <= i; j++) {
+          l[i][j] = LU[i][j];
+        }
+      }
+
+      L = l;
+
+    }
+    else {
+      throw anpi::Exception("Unpack Crout: Invalid compressed matrix size");
+    }
 
   }
   
@@ -60,7 +93,63 @@ namespace anpi {
                Matrix<T>& LU,
                std::vector<size_t>& permut) {
 
-    throw anpi::Exception("To be implemented yet");
+    if(A.rows() == A.cols()) {
+
+      LU = A;
+      int n = A.rows();
+      std::vector<size_t > index (A.rows());
+
+      for(int i = 0; i < index.size(); i++) { //relleno vector indice
+        index[i] = i;
+      }
+
+      T sum;
+
+      for (int j = 0; j < n; j++) {
+
+        int bigI = j;
+        for(int i = j; i < n; i++) { //busco el mayor numero en la columna
+          if(std::abs(LU[bigI][j]) < std::abs(LU[i][j])) { //cambio el indice de la fila
+            bigI = i;
+          }
+        }
+        if(bigI != j) { //si se encontro un pivote mayor se intercambian filas
+          T matrixTmp;
+          for(int k = j; k < n; k++) { //intercambio fila en matriz LU
+            matrixTmp = LU[j][k];
+            LU[j][k] = LU [bigI][k];
+            LU[bigI][k] = matrixTmp;
+          }
+          int indexTmp;
+          indexTmp = index[j];    //intercambio en vector indice
+          index[j] = index[bigI];
+          index[bigI] = indexTmp;
+        }
+
+        for (int i = j; i < n; i++) {
+          sum = T(0);
+          for (int k = 0; k < j; k++) {
+            sum += (LU[i][k] * LU[k][j]);
+          }
+          LU[i][j] -= sum;
+        }
+        for (int i = j; i < n; i++) {
+          sum = T(0);
+          for(int k = 0; k < j; k++) {
+            sum += (LU[j][k] * LU[k][i]);
+          }
+          if (LU[j][j] == 0) {
+            throw anpi::Exception("Crout: zero division");
+          }
+          LU[j][i] = (LU[j][i] - sum) / LU[j][j];
+        }
+      }
+      permut = index;
+    }
+    else {
+      throw anpi::Exception("Crout: invalid decomposition matrix size");
+    }
+
   }
 
 }

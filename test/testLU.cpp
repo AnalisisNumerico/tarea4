@@ -64,11 +64,37 @@ namespace anpi {
       {
         // same matrix as before, but already permuted to force a clean decomposition
         anpi::Matrix<T> A = { { 2, 0,1,2},{-1,-2,1,2},{ 1, 1,1,1},{-1,-1,0,1} };
+
+        std::cout << "-----------inicial-----------" << std::endl;
+        for(int i = 0; i < A.rows(); i++) {
+          for(int j = 0; j < A.cols(); j++) {
+            std::cout << A[i][j] << " ";
+          }
+          std::cout << std::endl;
+        }
+
         std::vector<size_t> p;
         decomp(A,LU,p);
+
+        std::cout << "-----------descomp-----------" << std::endl;
+        for(int i = 0; i < A.rows(); i++) {
+          for(int j = 0; j < A.cols(); j++) {
+            std::cout << LU[i][j]<< " ";
+          }
+          std::cout << std::endl;
+        }
+
         Matrix<T> L,U;
         unpack(LU,L,U);
         Matrix<T> Ar=L*U;
+
+        std::cout << "-----------comprobacion-----------" << std::endl;
+        for(int i = 0; i < A.rows(); i++) {
+          for(int j = 0; j < A.cols(); j++) {
+            std::cout << Ar[i][j]<< " ";
+          }
+          std::cout << std::endl;
+        }
 
         const T eps = std::numeric_limits<T>::epsilon();
 

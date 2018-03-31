@@ -34,7 +34,42 @@ namespace anpi {
                        Matrix<T>& L,
                        Matrix<T>& U) {
 
-    throw anpi::Exception("To be implemented yet");
+    if (LU.cols() == LU.rows()) {
+
+      int luCols = LU.cols();
+      int luRows = LU.rows();
+
+      anpi::Matrix<T> u(LU.rows(),LU.cols());
+
+      for(int j = 0; j < luCols; j++) {
+        for(int i = 0; i <= j; i++) {
+          u[i][j] = LU[i][j];
+        }
+      }
+
+      U = u;
+
+      anpi::Matrix<T> l(LU.rows(),LU.cols());
+      //Matrix<T,Alloc> l(LU.rows(),LU.cols());
+      //l.allocate(LU.rows(),LU.cols());
+
+      for(int i = 0; i < luRows; i++) { //diagonal
+        l[i][i] = T(1);
+      }
+
+      for(int i = 1; i < luRows; i++) {
+        for(int j = 0; j < i; j++) {
+          l[i][j] = LU[i][j];
+        }
+      }
+
+      L = l;
+
+    }
+    else {
+      throw anpi::Exception("Unpack Doolittle: Invalid compressed matrix size");
+    }
+
   }
   
   /**
@@ -61,7 +96,53 @@ namespace anpi {
                    Matrix<T>& LU,
                    std::vector<size_t>& permut) {
 
-    throw anpi::Exception("To be implemented yet");
+    if(A.rows() == A.cols()) {
+
+      LU = A;
+      int n = A.rows();
+      std::vector<size_t > index (A.rows());
+
+      for(int i = 0; i < index.size(); i++) { //relleno vector indice
+        index[i] = i;
+      }
+
+      for(int j = 0; j < n-1; j++) {
+        int bigI = j;
+        for(int i = j; i < n; i++) { //busco el mayor numero en la columna
+          if(std::abs(LU[bigI][j]) < std::abs(LU[i][j])) { //cambio el indice de la fila
+            bigI = i;
+          }
+        }
+        if(bigI != j) { //si se encontro un pivote mayor se intercambian filas
+          T matrixTmp;
+          for(int k = j; k < n; k++) { //intercambio fila en matriz LU
+            matrixTmp = LU[j][k];
+            LU[j][k] = LU [bigI][k];
+            LU[bigI][k] = matrixTmp;
+          }
+          int indexTmp;
+          indexTmp = index[j];    //intercambio en vector indice
+          index[j] = index[bigI];
+          index[bigI] = indexTmp;
+        }
+
+        if(LU[0][0] == T(0)) {
+          throw anpi::Exception("Doolittle: division by zero"); // Anadir povoteo horizontal
+        }
+
+        for(int i = j+1; i < n; i++) {
+          LU[i][j] /= LU[j][j]; // obtencion de l
+          for(int k = j+1; k < n; k++) {
+            LU[i][k] = LU[i][k] - LU[i][j] * LU[j][k];
+          }
+        }
+
+      }
+      permut = index;
+    }
+    else {
+      throw anpi::Exception("Doolittle: invalid decomposition matrix size");
+    }
   }
 
 }

@@ -17,7 +17,7 @@
 int main() {
 
   // Some example code
-/*
+  
   anpi::Matrix<float> A = { {-1,-2,1,2},
                             { 2, 0,1,2},
                             {-1,-1,0,1},
@@ -26,20 +26,6 @@ int main() {
   
   std::vector<size_t> p;
   anpi::luDoolittle(A,LU,p);
-*/
-  anpi::Matrix<double> a = { {1, 0, 2},
-                             {2, 1, 0},
-                             {0, 2, 1} };
-
-  anpi::Matrix<double> b = { {1},
-                             {0.5},
-                             {2} };
-
-  anpi::Matrix<double> c = a * b;
-
-  std::cout << c[0][0] << std::endl;
-  std::cout << c[1][0] << std::endl;
-  std::cout << c[2][0] << std::endl;
 
   return EXIT_FAILURE;
 }
