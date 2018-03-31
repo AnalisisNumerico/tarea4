@@ -394,7 +394,15 @@ namespace anpi
   Matrix<T,Alloc>& Matrix<T,Alloc>::operator-=(const Matrix<T,Alloc>& other) {
 
     ::anpi::aimpl::subtract(*this,other);
-      
+
+    return *this;
+  }
+
+  template<typename T,class Alloc>
+  Matrix<T,Alloc>& Matrix<T,Alloc>::operator*=(const std::vector<T>& other) {
+
+    ::anpi::aimpl::product(*this,other);
+
     return *this;
   }
 
@@ -423,11 +431,35 @@ namespace anpi
   // TODO: Solucionar en la Tarea 04 (faltan otros operadores)
   template<typename T,class Alloc>
   Matrix<T,Alloc> operator*(const Matrix<T,Alloc>& a,
-                            const Matrix<T,Alloc>& b) {
-    
-    
-    assert(false && "Not implemented yet");
+                            const std::vector<T>& b) {
+
+    assert( (a.cols()==b.size()) );
+
+    //Matrix<T,Alloc> c(a.rows(),1,anpi::DoNotInitialize);
+    Matrix<T,Alloc> c(a.rows(),1);
+    ::anpi::aimpl::product(a,b,c);
+      return c;
+
+    //assert(false && "Not implemented yet");
   }
+
+
+
+
+    template<typename T,class Alloc>
+    Matrix<T,Alloc> operator*(const Matrix<T,Alloc>& a,
+                              const Matrix<T,Alloc>& b) {
+      if (a.cols() == b.rows()) {
+        Matrix<T,Alloc> c(a.rows(),b.cols());
+        ::anpi::aimpl::product(a,b,c);
+        return c;
+      }
+
+      else {
+        throw anpi::Exception("Invalid multiplication operands size");
+      }
+
+    }
 
   
 } // namespace ANPI

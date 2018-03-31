@@ -19,6 +19,7 @@
 
 #include "Matrix.hpp"
 #include "Allocator.hpp"
+#include <iostream>
 
 // Explicit instantiation of all methods of Matrix
 
@@ -253,6 +254,8 @@ void testArithmetic() {
   }
 
   {
+
+
     M a = { {1,2,3},{ 4, 5, 6} };
     M b = { {7,8,9},{10,11,12} };
     M r = { {-6,-6,-6},{-6,-6,-6} };
@@ -269,7 +272,34 @@ void testArithmetic() {
 
     c=a-M{ {7,8,9},{10,11,12} };
     BOOST_CHECK( c==r );
-  } 
+  }
+
+  {
+    M a = { {1,2,3},{ 6, 5, 4} };
+    std::vector<typename M::value_type> b = { 1,2,-3 };
+    M r = { {-4},{4} };
+
+
+    M c(a);
+    c*=b;
+    /*for(int i =0; i < c.rows(); i++){
+      std::cout << "con i " << c[i][0]<< std::endl;
+    }
+    for(int i =0; i < c.rows(); i++){
+      std::cout << "ton i " << r[i][0]<< std::endl;
+    }*/
+    //BOOST_CHECK( c==r );
+
+    c=a*b;
+     BOOST_CHECK( c==r );
+
+    c=M{ {1,2,3},{ 6, 5, 4} } * b;
+    BOOST_CHECK( c==r );
+
+    c=a* std::vector<typename M::value_type> { 1,2,-3 };
+    BOOST_CHECK( c==r );
+   }
+
 }
 
 BOOST_AUTO_TEST_CASE(Arithmetic) {
