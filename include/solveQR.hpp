@@ -37,15 +37,26 @@ namespace anpi {
               }
           }
 
-        ///METODO inversa
-          anpi::Matrix<T> inversaR(R.cols(),R.rows());
-          for(int i =0; i < R.cols(); i++){
-              for(int j =0; j < R.rows(); j++){
-                  inversaR[i][j] = R[j][i]; ///Arreglar
-              }
+
+        Matrix<T> Rx = transpuestaQ * b; ///vector
+
+        ///METODO sustitucion hacia atras
+          //i=R.cols(); ///Podria ser cols o rows... Debe ser cuadrada
+          j=i+1;
+          for(int i = R.cols(); i>0; --i){
+            for(int j = i+1; j<R.cols; j++){  //revisar si x es [i][0] o [0][i]
+            Matrix<T> x[i][0] = (1/R[i][i]) * [ Rx[i][0] - R[i][j]*x[j][0] ];
+
           }
 
-        Matrix<T> Temp = inversaR * transpuestaQ;
+
+
+          i=i-1;
+          j=i+1;
+
+
+
+
 
         Matrix<T> x = Temp * b;
 
