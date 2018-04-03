@@ -113,8 +113,8 @@ int main() {
     std::vector<float> v1T = { -1, 3, -2 };
 
     ///Metodo producto externo
-        std::vector<float> vector= { 0.96,0.28 };
-        std::vector<float> vectorTranspuesto= { 0.96,0.28 };
+        std::vector<float> vector= { -0.8,0.6 };
+        std::vector<float> vectorTranspuesto= { -0.8,0.6 };
         anpi::Matrix<float> productoExterno1(vector.size(),vectorTranspuesto.size());
         for (int i = 0; i < productoExterno1.rows(); i++) {
             for (int j = 0; j < productoExterno1.cols(); j++) {
@@ -122,8 +122,29 @@ int main() {
             }
     }
 
+///METODO imprime matriz
+    std::cout << "productoExterno1 = [";
+    for(int i =0; i < productoExterno1.rows(); i++){
+        for(int j =0; j < productoExterno1.cols(); j++){
+            std::cout << productoExterno1[i][j] << ", " ;
+        }
+        std::cout << "" << std::endl;
+    }
+    std::cout << "]"<< std::endl;
 
 
+
+    anpi::Matrix<float> QR = Q*R;
+
+    ///METODO imprime matriz
+    std::cout << "QR = [";
+    for(int i =0; i < QR.rows(); i++){
+        for(int j =0; j < QR.cols(); j++){
+            std::cout << QR[i][j] << ", " ;
+        }
+        std::cout << "" << std::endl;
+    }
+    std::cout << "]"<< std::endl;
 
     //anpi::Matrix<float> quepasa = { 175, 49, 168 };
 

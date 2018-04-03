@@ -9,7 +9,7 @@
  */
 
 #include "bits/MatrixArithmetic.hpp"
-
+#include "Exception.hpp"
 namespace anpi
 {
 
