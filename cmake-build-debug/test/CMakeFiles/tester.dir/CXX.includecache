@@ -111,15 +111,7 @@ LUDoolittle.hpp
 /home/jeanpaul/Code/c++/tarea4/test/LUDoolittle.hpp
 iostream
 -
-exception
--
-cstdlib
--
 complex
--
-functional
--
-cmath
 -
 
 /home/jeanpaul/Code/c++/tarea4/test/testMain.cpp

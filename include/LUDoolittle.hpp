@@ -102,7 +102,7 @@ namespace anpi {
       int n = A.rows();
       std::vector<size_t > index (A.rows());
 
-      for(int i = 0; i < index.size(); i++) { //relleno vector indice
+      for(int i = 0; i < n; i++) { //relleno vector indice
         index[i] = i;
       }
 
@@ -115,12 +115,12 @@ namespace anpi {
         }
         if(bigI != j) { //si se encontro un pivote mayor se intercambian filas
           T matrixTmp;
-          for(int k = j; k < n; k++) { //intercambio fila en matriz LU
+          for(int k = 0; k < n; k++) { //intercambio fila en matriz LU <<<<<<<<<<<<<<<<<<<<<< posible error k = 0
             matrixTmp = LU[j][k];
             LU[j][k] = LU [bigI][k];
             LU[bigI][k] = matrixTmp;
           }
-          int indexTmp;
+          size_t indexTmp;
           indexTmp = index[j];    //intercambio en vector indice
           index[j] = index[bigI];
           index[bigI] = indexTmp;
