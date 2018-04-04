@@ -279,18 +279,7 @@ void testArithmetic() {
     std::vector<typename M::value_type> b = { 1,2,-3 };
     M r = { {-4},{4} };
 
-
-    M c(a);
-    c*=b;
-    /*for(int i =0; i < c.rows(); i++){
-      std::cout << "con i " << c[i][0]<< std::endl;
-    }
-    for(int i =0; i < c.rows(); i++){
-      std::cout << "ton i " << r[i][0]<< std::endl;
-    }*/
-    //BOOST_CHECK( c==r );
-
-    c=a*b;
+    M c=a*b;
      BOOST_CHECK( c==r );
 
     c=M{ {1,2,3},{ 6, 5, 4} } * b;

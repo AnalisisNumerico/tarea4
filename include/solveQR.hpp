@@ -39,26 +39,18 @@ namespace anpi {
 
 
         Matrix<T> Rx = transpuestaQ * b; ///vector
-
+        Matrix<T> xTemp;
         ///METODO sustitucion hacia atras
           //i=R.cols(); ///Podria ser cols o rows... Debe ser cuadrada
-          j=i+1;
+          //j=i+1;
           for(int i = R.cols(); i>0; --i){
             for(int j = i+1; j<R.cols; j++){  //revisar si x es [i][0] o [0][i]
-            Matrix<T> x[i][0] = (1/R[i][i]) * [ Rx[i][0] - R[i][j]*x[j][0] ];
+            x[i][0] = (1/R[i][i]) * [ Rx[i][0] - R[i][j]*x[j][0] ];
 
           }
 
 
 
-          i=i-1;
-          j=i+1;
-
-
-
-
-
-        Matrix<T> x = Temp * b;
 
     }
 }

@@ -26,7 +26,6 @@ namespace anpi {
         int k = 0; ///hay que cambiarlo en cada ciclo
         anpi::Matrix<T> Atemp = A;
         while(k<2){
-            std::cout << "inicia " << k << std::endl;
             std::vector<T> fila;
             for (int i = 0+k; i < A.rows(); i++) {
                 fila.push_back(Atemp[i][k]);
