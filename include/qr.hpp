@@ -157,6 +157,47 @@ namespace anpi {
 
     }
 
+    template<typename T>
+    bool solveQR (const anpi::Matrix <T>&A, std::vector<T>&x, const std::vector<T> &b){
+
+        Matrix<T> Q;
+        Matrix<T> R;
+        anpi::qr(A,Q,R);
+
+        ///METODO transpuesta
+        anpi::Matrix<T> transpuestaQ(Q.cols(),Q.rows());
+        for(int i =0; i < Q.cols(); i++){
+            for(int j =0; j < Q.rows(); j++){
+                transpuestaQ[i][j] = Q[j][i];
+            }
+        }
+
+        Matrix<T> Rx = transpuestaQ * b; ///vector
+
+        ///METODO sustitucion hacia atras
+        x.push_back(7);
+        x[R.cols()-1] = (Rx[Rx.rows()-1][0])/R[R.rows()-1][R.cols()-1];
+
+        int i = R.cols()-1;
+        while(i>0){
+                i=i-1;
+            T sumatoria= 0;
+            for(int j = i+1; j<R.cols(); j++){
+                sumatoria = sumatoria + R[i][j]*x[j];
+            }
+            x[i] = (1/R[i][i]) * ( Rx[i][0] - sumatoria );
+        }
+
+
+            ///da fuck
+            return 1;
+
+
+
+
+
+    }
+
 
 
 
