@@ -188,7 +188,6 @@ namespace anpi {
             x[i] = (1/R[i][i]) * ( Rx[i][0] - sumatoria );
         }
 
-
             ///da fuck
             return 1;
 
