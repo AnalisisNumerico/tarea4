@@ -44,7 +44,6 @@ namespace anpi {
 
     for(int i = 0; i < n; i++) {
       y[i] =  T(1);
-      //std::cout << y[i] << std::endl;///////
     }
 
     T sum;
@@ -56,10 +55,7 @@ namespace anpi {
       }
       y[m] =  (b[m] - sum)/L[m][m];
     }
-/*
-    for(int i = 0; i < n; i++) {///////
-      std::cout << y[i] << std::endl;
-    }*/
+
   }
 
   /// method used to solve upper triangular matrices

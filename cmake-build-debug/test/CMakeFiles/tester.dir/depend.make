@@ -5,6 +5,19 @@ test/CMakeFiles/tester.dir/testAllocator.cpp.o: ../include/Allocator.hpp
 test/CMakeFiles/tester.dir/testAllocator.cpp.o: ../include/HasType.hpp
 test/CMakeFiles/tester.dir/testAllocator.cpp.o: ../test/testAllocator.cpp
 
+test/CMakeFiles/tester.dir/testInversion.cpp.o: ../include/Allocator.hpp
+test/CMakeFiles/tester.dir/testInversion.cpp.o: ../include/AnpiConfig.hpp
+test/CMakeFiles/tester.dir/testInversion.cpp.o: ../include/Exception.hpp
+test/CMakeFiles/tester.dir/testInversion.cpp.o: ../include/HasType.hpp
+test/CMakeFiles/tester.dir/testInversion.cpp.o: ../include/Intrinsics.hpp
+test/CMakeFiles/tester.dir/testInversion.cpp.o: ../include/Inversion.hpp
+test/CMakeFiles/tester.dir/testInversion.cpp.o: ../include/LUDoolittle.hpp
+test/CMakeFiles/tester.dir/testInversion.cpp.o: ../include/Matrix.hpp
+test/CMakeFiles/tester.dir/testInversion.cpp.o: ../include/Matrix.tpp
+test/CMakeFiles/tester.dir/testInversion.cpp.o: ../include/Solver.hpp
+test/CMakeFiles/tester.dir/testInversion.cpp.o: ../include/bits/MatrixArithmetic.hpp
+test/CMakeFiles/tester.dir/testInversion.cpp.o: ../test/testInversion.cpp
+
 test/CMakeFiles/tester.dir/testLU.cpp.o: ../include/Allocator.hpp
 test/CMakeFiles/tester.dir/testLU.cpp.o: ../include/AnpiConfig.hpp
 test/CMakeFiles/tester.dir/testLU.cpp.o: ../include/Exception.hpp

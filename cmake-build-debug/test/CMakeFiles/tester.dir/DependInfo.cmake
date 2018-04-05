@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/jeanpaul/Code/c++/tarea4/test/testAllocator.cpp" "/home/jeanpaul/Code/c++/tarea4/cmake-build-debug/test/CMakeFiles/tester.dir/testAllocator.cpp.o"
+  "/home/jeanpaul/Code/c++/tarea4/test/testInversion.cpp" "/home/jeanpaul/Code/c++/tarea4/cmake-build-debug/test/CMakeFiles/tester.dir/testInversion.cpp.o"
   "/home/jeanpaul/Code/c++/tarea4/test/testLU.cpp" "/home/jeanpaul/Code/c++/tarea4/cmake-build-debug/test/CMakeFiles/tester.dir/testLU.cpp.o"
   "/home/jeanpaul/Code/c++/tarea4/test/testMain.cpp" "/home/jeanpaul/Code/c++/tarea4/cmake-build-debug/test/CMakeFiles/tester.dir/testMain.cpp.o"
   "/home/jeanpaul/Code/c++/tarea4/test/testMatrix.cpp" "/home/jeanpaul/Code/c++/tarea4/cmake-build-debug/test/CMakeFiles/tester.dir/testMatrix.cpp.o"

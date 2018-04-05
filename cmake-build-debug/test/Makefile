@@ -163,6 +163,33 @@ testAllocator.cpp.s:
 	cd /home/jeanpaul/Code/c++/tarea4/cmake-build-debug && $(MAKE) -f test/CMakeFiles/tester.dir/build.make test/CMakeFiles/tester.dir/testAllocator.cpp.s
 .PHONY : testAllocator.cpp.s
 
+testInversion.o: testInversion.cpp.o
+
+.PHONY : testInversion.o
+
+# target to build an object file
+testInversion.cpp.o:
+	cd /home/jeanpaul/Code/c++/tarea4/cmake-build-debug && $(MAKE) -f test/CMakeFiles/tester.dir/build.make test/CMakeFiles/tester.dir/testInversion.cpp.o
+.PHONY : testInversion.cpp.o
+
+testInversion.i: testInversion.cpp.i
+
+.PHONY : testInversion.i
+
+# target to preprocess a source file
+testInversion.cpp.i:
+	cd /home/jeanpaul/Code/c++/tarea4/cmake-build-debug && $(MAKE) -f test/CMakeFiles/tester.dir/build.make test/CMakeFiles/tester.dir/testInversion.cpp.i
+.PHONY : testInversion.cpp.i
+
+testInversion.s: testInversion.cpp.s
+
+.PHONY : testInversion.s
+
+# target to generate assembly for a file
+testInversion.cpp.s:
+	cd /home/jeanpaul/Code/c++/tarea4/cmake-build-debug && $(MAKE) -f test/CMakeFiles/tester.dir/build.make test/CMakeFiles/tester.dir/testInversion.cpp.s
+.PHONY : testInversion.cpp.s
+
 testLU.o: testLU.cpp.o
 
 .PHONY : testLU.o
@@ -311,6 +338,9 @@ help:
 	@echo "... testAllocator.o"
 	@echo "... testAllocator.i"
 	@echo "... testAllocator.s"
+	@echo "... testInversion.o"
+	@echo "... testInversion.i"
+	@echo "... testInversion.s"
 	@echo "... testLU.o"
 	@echo "... testLU.i"
 	@echo "... testLU.s"

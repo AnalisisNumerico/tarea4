@@ -36,6 +36,10 @@ altivec.h
 spe.h
 -
 
+../include/Inversion.hpp
+Solver.hpp
+../include/Solver.hpp
+
 ../include/LUCrout.hpp
 cmath
 -
@@ -121,6 +125,22 @@ boost/test/unit_test.hpp
 -
 Allocator.hpp
 -
+
+/home/jeanpaul/Code/c++/tarea4/test/testInversion.cpp
+boost/test/unit_test.hpp
+-
+iostream
+-
+exception
+-
+cstdlib
+-
+functional
+-
+cmath
+-
+Inversion.hpp
+/home/jeanpaul/Code/c++/tarea4/test/Inversion.hpp
 
 /home/jeanpaul/Code/c++/tarea4/test/testLU.cpp
 boost/test/unit_test.hpp
