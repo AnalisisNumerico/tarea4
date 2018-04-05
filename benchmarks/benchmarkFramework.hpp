@@ -141,6 +141,7 @@ namespace anpi {
     void plotRange(const std::vector<measurement>& m,
                    const std::string& legend,
                    const std::string& color) {
+
       std::vector<double> x(m.size()),y(m.size()),miny(m.size()),maxy(m.size());
 
       for (size_t i=0;i<m.size();++i) {
@@ -189,31 +190,22 @@ namespace anpi {
   const size_t _nums = sizes.size();                               \
                                                                    \
   typedef std::chrono::duration<double> durat;                     \
-                                                                   \
   /* each row holds a particular size */                           \
   ::anpi::Matrix<durat> _mat(_nums,rep,::anpi::DoNotInitialize);   \
-                                                                   \
   /* test each size */                                             \
   for (size_t s=0;s<_nums;++s ) {                                  \
     const size_t size = sizes[s];                                  \
-                                                                   \
     std::cout << "Testing size " << size << std::endl;             \
-                                                                   \
     durat* _row = _mat[s];                                         \
-                                                                   \
     /* prefix code for initialization before measurement */        \
     bench.prepare(size);                                           \
-                                                                   \
     const auto _start = std::chrono::high_resolution_clock::now(); \
-                                                                   \
     for ( size_t i=0;i<rep;++i ) {                                 \
       /* the code to be benchmarked */                             \
       bench.eval();                                                \
-                                                                   \
       _row[i] = std::chrono::high_resolution_clock::now()-_start;  \
     }                                                              \
   }                                                                \
-                                                                   \
   ::anpi::benchmark::computeStats(sizes,_mat,times);               \
 }
 

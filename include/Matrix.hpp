@@ -316,7 +316,10 @@ namespace anpi
 
     /// Multiply another matrix to this one, and leave the result in here
     Matrix& operator*=(const Matrix& other);
-    
+
+    /// Multiplicate another matrix to this one, and leave the result in here
+    Matrix& operator *=(const std::vector<T>& other);
+
     //@}
 
   private:
@@ -356,6 +359,8 @@ namespace anpi
   Matrix<T,Alloc> operator*(const Matrix<T,Alloc>& a,
                             const Matrix<T,Alloc>& b);
   //@}
+
+
   
 } // namespace ANPI
 

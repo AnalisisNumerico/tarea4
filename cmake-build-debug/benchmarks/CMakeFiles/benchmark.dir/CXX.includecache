@@ -81,8 +81,10 @@ Intrinsics.hpp
 ../include/bits/Intrinsics.hpp
 type_traits
 -
+iostream
+-
 
-/home/jeanpaul/Code/c++/tarea4/benchmarks/benchmarkFramework.hpp
+/home/ger534/CLionProjects/tarea4/benchmarks/benchmarkFramework.hpp
 chrono
 -
 iostream
@@ -98,11 +100,11 @@ Matrix.hpp
 PlotPy.hpp
 -
 
-/home/jeanpaul/Code/c++/tarea4/benchmarks/benchmarkMain.cpp
+/home/ger534/CLionProjects/tarea4/benchmarks/benchmarkMain.cpp
 boost/test/unit_test.hpp
 -
 
-/home/jeanpaul/Code/c++/tarea4/benchmarks/benchmarkMatrixAdd.cpp
+/home/ger534/CLionProjects/tarea4/benchmarks/benchmarkMatrixAdd.cpp
 boost/test/unit_test.hpp
 -
 iostream
@@ -114,9 +116,9 @@ cstdlib
 complex
 -
 benchmarkFramework.hpp
-/home/jeanpaul/Code/c++/tarea4/benchmarks/benchmarkFramework.hpp
+/home/ger534/CLionProjects/tarea4/benchmarks/benchmarkFramework.hpp
 Matrix.hpp
-/home/jeanpaul/Code/c++/tarea4/benchmarks/Matrix.hpp
+/home/ger534/CLionProjects/tarea4/benchmarks/Matrix.hpp
 Allocator.hpp
-/home/jeanpaul/Code/c++/tarea4/benchmarks/Allocator.hpp
+/home/ger534/CLionProjects/tarea4/benchmarks/Allocator.hpp
 

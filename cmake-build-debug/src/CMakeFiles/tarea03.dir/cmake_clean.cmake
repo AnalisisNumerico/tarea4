@@ -1,10 +1,10 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/tarea03.dir/main.cpp.o"
-  "tarea03.pdb"
-  "tarea03"
+  "CMakeFiles/tarea04.dir/main.cpp.o"
+  "tarea04.pdb"
+  "tarea04"
 )
 
 # Per-language clean rules from dependency scanning.
 foreach(lang CXX)
-  include(CMakeFiles/tarea03.dir/cmake_clean_${lang}.cmake OPTIONAL)
+  include(CMakeFiles/tarea04.dir/cmake_clean_${lang}.cmake OPTIONAL)
 endforeach()

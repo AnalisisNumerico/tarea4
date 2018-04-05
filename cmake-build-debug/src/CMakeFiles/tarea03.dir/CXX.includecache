@@ -81,8 +81,10 @@ Intrinsics.hpp
 ../include/bits/Intrinsics.hpp
 type_traits
 -
+iostream
+-
 
-/home/jeanpaul/Code/c++/tarea4/src/main.cpp
+/home/ger534/CLionProjects/tarea4/src/main.cpp
 cstdlib
 -
 iostream
@@ -90,5 +92,5 @@ iostream
 vector
 -
 LUDoolittle.hpp
-/home/jeanpaul/Code/c++/tarea4/src/LUDoolittle.hpp
+/home/ger534/CLionProjects/tarea4/src/LUDoolittle.hpp
 

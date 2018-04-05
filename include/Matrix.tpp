@@ -11,7 +11,9 @@
 #include "bits/MatrixArithmetic.hpp"
 #include "Exception.hpp"
 
-namespace anpi {
+
+namespace anpi{
+
 
   // -------------------------------------------
   // Implementation of Matrix::_Matrix_impl
@@ -394,7 +396,15 @@ namespace anpi {
   Matrix<T,Alloc>& Matrix<T,Alloc>::operator-=(const Matrix<T,Alloc>& other) {
 
     ::anpi::aimpl::subtract(*this,other);
-      
+
+    return *this;
+  }
+
+  template<typename T,class Alloc>
+  Matrix<T,Alloc>& Matrix<T,Alloc>::operator*=(const std::vector<T>& other) {
+
+    ::anpi::aimpl::product(*this,other);
+
     return *this;
   }
 
@@ -435,19 +445,32 @@ namespace anpi {
   }
 
   template<typename T,class Alloc>
-  Matrix<T,Alloc> operator*(const Matrix<T,Alloc>& a,
-                            const Matrix<T,Alloc>& b) {
-    if (a.cols() == b.rows()) {
-      Matrix<T,Alloc> c(a.rows(),b.cols());
-      ::anpi::aimpl::product(a,b,c);
-      return c;
-    }
+  Matrix<T,Alloc> operator*(const Matrix<T,Alloc>& a, const std::vector<T>& b) {
 
-    else {
-      throw anpi::Exception("Invalid multiplication operands size");
-    }
+    assert( (a.cols()==b.size()) );
+    Matrix<T,Alloc> c(a.rows(),1);
+    ::anpi::aimpl::product(a,b,c);
+      return c;
 
   }
+
+
+
+
+    template<typename T,class Alloc>
+    Matrix<T,Alloc> operator*(const Matrix<T,Alloc>& a,
+                              const Matrix<T,Alloc>& b) {
+      if (a.cols() == b.rows()) {
+        Matrix<T,Alloc> c(a.rows(),b.cols());
+        ::anpi::aimpl::product(a,b,c);
+        return c;
+      }
+
+      else {
+        throw anpi::Exception("Invalid multiplication operands size");
+      }
+
+    }
 
   
 } // namespace ANPI

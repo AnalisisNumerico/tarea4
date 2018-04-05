@@ -1,4 +1,4 @@
-# Install script for directory: /home/jeanpaul/Code/c++/tarea4/test
+# Install script for directory: /home/ger534/CLionProjects/tarea4/test
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -6,5 +6,5 @@ CXX_FLAGS =  -Wall -Wno-long-long -pedantic -march=native -fopenmp -g   -std=gnu
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/jeanpaul/Code/c++/tarea4/include 
+CXX_INCLUDES = -I/home/ger534/CLionProjects/tarea4/include 
 
