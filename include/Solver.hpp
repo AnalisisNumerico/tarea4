@@ -9,8 +9,8 @@ namespace anpi {
    */
   template<typename T>
   inline void lu(const anpi::Matrix<T>& A,
-                 anpi::Matrix<T> LU,
-                 std::vector<size_t>& p) {
+                 anpi::Matrix<T> &      LU,
+                 std::vector<size_t>&   p) {
     anpi::luDoolittle(A,LU,p);
   }
 
@@ -18,8 +18,8 @@ namespace anpi {
    * permutation vector
   **/
   template<typename T>
-  void permutationMatrix(const std::vector<size_t>&       p,
-                         anpi::Matrix<T>&           pMatrix) {
+  void permutationMatrix(const std::vector<size_t>& p,
+                         anpi::Matrix<T>&     pMatrix) {
 
     int n = p.size();
     anpi::Matrix<T> matrix(p.size(),p.size());
@@ -39,9 +39,12 @@ namespace anpi {
                            std::vector<T>&        y) {
 
     int n = L.rows();
-    std::vector<T> x(n);
+
+    y = b;
+
     for(int i = 0; i < n; i++) {
-      x[i] =  T(1);
+      y[i] =  T(1);
+      //std::cout << y[i] << std::endl;///////
     }
 
     T sum;
@@ -49,41 +52,40 @@ namespace anpi {
     for(int m = 0; m < n ; m++) {
       sum = T(0);
       for(int i = 0; i < m; i++) {
-        sum += L[m][i] * x[i];
+        sum += L[m][i] * y[i];
       }
-      x[m] =  (b[m] - sum)/L[m][m];
+      y[m] =  (b[m] - sum)/L[m][m];
     }
-
-    y = x;
-
+/*
+    for(int i = 0; i < n; i++) {///////
+      std::cout << y[i] << std::endl;
+    }*/
   }
 
   /// method used to solve upper triangular matrices
   template<typename T>
   void backwardSubstitution(const anpi::Matrix<T>& U,
-                        const std::vector<T>&  y,
-                        std::vector<T>&        x) {
+                            const std::vector<T>&  y,
+                            std::vector<T>&        x) {
     int n = U.rows();
 
-    std::vector<T> w(n);
+    x = y;
+
     for(int i = 0; i < n; i++) {
-      w[i] =  T(1);
+      x[i] =  T(1);
     }
 
     T sum;
 
-    w[n-1] = y[n-1] / U[n-1][n-1];
+    x[n-1] = y[n-1] / U[n-1][n-1];
 
     for(int i = (n-2); i >= 0; i--) {
       sum = T(0);
       for(int j = (n-1); j >= (i+1); j--) {
-        sum += U[i][j] * w[j];
+        sum += U[i][j] * x[j];
       }
-      w[i] = (y[i] - sum) / U[i][i];
+      x[i] = (y[i] - sum) / U[i][i];
     }
-
-    x = w;
-
   }
 
   template<typename T>
@@ -102,7 +104,7 @@ namespace anpi {
     anpi::Matrix<T> P;
     anpi::permutationMatrix(p,P);
 
-    anpi::Matrix<T>PB = P * b; //ERRROR
+    anpi::Matrix<T>PB = P * b;
 
     std::vector<T> Pb(PB.rows());
 
@@ -110,13 +112,12 @@ namespace anpi {
       Pb[i] = PB[i][0];
     }
 
-    std::vector<T>y;
+    std::vector<T> y;
     anpi::forwardSubstitution(L,Pb,y);
 
     anpi::backwardSubstitution(U,y,x);
 
     return 1;
-
 
   }
 

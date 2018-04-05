@@ -115,7 +115,7 @@ namespace anpi {
         }
         if(bigI != j) { //si se encontro un pivote mayor se intercambian filas
           T matrixTmp;
-          for(int k = 0; k < n; k++) { //intercambio fila en matriz LU <<<<<<<<<<<<<<<<<<<<<< posible error k = 0
+          for(int k = 0; k < n; k++) { //intercambio fila en matriz LU
             matrixTmp = LU[j][k];
             LU[j][k] = LU [bigI][k];
             LU[bigI][k] = matrixTmp;
@@ -127,7 +127,7 @@ namespace anpi {
         }
 
         if(LU[0][0] == T(0)) {
-          throw anpi::Exception("Doolittle: division by zero"); // Anadir povoteo horizontal
+          throw anpi::Exception("Doolittle: division by zero");
         }
 
         for(int i = j+1; i < n; i++) {
