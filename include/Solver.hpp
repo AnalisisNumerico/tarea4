@@ -85,9 +85,20 @@ namespace anpi {
   }
 
   template<typename T>
+  T vectorNorm(std::vector<T>& b){
+    T sum = T(0);
+    for(int i = 0; i < b.size(); i++) {
+      sum = b[i] * b[i];
+    }
+    return std::sqrt(sum);
+  }
+
+  template<typename T>
   bool solveLU(const anpi::Matrix<T>& A,
                std::vector<T>&        x,
                const std::vector<T>&  b) {
+
+    const T eps = std::numeric_limits<T>::epsilon();
 
     anpi::Matrix<T> LU;
     std::vector<size_t> p;
@@ -100,23 +111,47 @@ namespace anpi {
     anpi::Matrix<T> P;
     anpi::permutationMatrix(p,P);
 
-    anpi::Matrix<T>PB = P * b;
+    std::vector<T>  bprima = b;
 
-    std::vector<T> Pb(PB.rows());
+    std::vector <T> xPast(A.rows());
 
-    for(int i = 0; i < PB.rows(); i++) {
-      Pb[i] = PB[i][0];
-    }
+    do {
 
-    std::vector<T> y;
-    anpi::forwardSubstitution(L,Pb,y);
+      anpi::Matrix<T>PB = P * bprima;
 
-    anpi::backwardSubstitution(U,y,x);
+      std::vector<T> Pb(PB.rows());
+
+      for(int i = 0; i < PB.rows(); i++) {
+        Pb[i] = PB[i][0];
+      }
+
+      std::vector<T> y;
+      anpi::forwardSubstitution(L,Pb,y);
+
+      anpi::backwardSubstitution(U,y,x);
+
+      for(int i = 0; i < A.rows(); i++) {
+        x[i] -= xPast[i];
+      }
+
+      xPast = x;
+
+      anpi::Matrix<T> BPrima = A * x;
+
+      for(int i = 0; i < PB.rows(); i++) {
+        bprima[i] = BPrima[i][0];
+      }
+
+      for(int i = 0; i < PB.rows(); i++) {
+        bprima[i] -= b[i];
+      }
+
+    } while (anpi::vectorNorm<T>(bprima) > eps);
 
     return 1;
 
   }
-
+  
 }//anpi
 
 #endif

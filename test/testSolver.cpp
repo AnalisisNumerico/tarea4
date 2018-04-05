@@ -86,11 +86,14 @@ namespace anpi {
 
         const T eps = 1e-5;
 
+        //const T eps = std::numeric_limits<T>::epsilon();
+
+
         std::vector<T> verdaderoX = {0.561798, 1.01124, 0.52809};
 
         for (size_t i=0;i<verdaderoX.size();++i) {
 
-          BOOST_CHECK(std::abs(verdaderoX[i] - x[i]) < eps);
+          BOOST_CHECK(std::abs(verdaderoX[i] - x[i]) < eps*100);
         }
 
       }
