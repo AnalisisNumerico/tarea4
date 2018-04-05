@@ -29,3 +29,15 @@ test/CMakeFiles/tester.dir/testMatrix.cpp.o
  ../include/Matrix.tpp
  ../include/bits/MatrixArithmetic.hpp
  /home/jeanpaul/Code/c++/tarea4/test/testMatrix.cpp
+test/CMakeFiles/tester.dir/testSolver.cpp.o
+ ../include/Allocator.hpp
+ ../include/AnpiConfig.hpp
+ ../include/Exception.hpp
+ ../include/HasType.hpp
+ ../include/Intrinsics.hpp
+ ../include/LUDoolittle.hpp
+ ../include/Matrix.hpp
+ ../include/Matrix.tpp
+ ../include/Solver.hpp
+ ../include/bits/MatrixArithmetic.hpp
+ /home/jeanpaul/Code/c++/tarea4/test/testSolver.cpp

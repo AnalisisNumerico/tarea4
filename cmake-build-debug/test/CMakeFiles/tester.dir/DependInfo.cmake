@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/jeanpaul/Code/c++/tarea4/test/testLU.cpp" "/home/jeanpaul/Code/c++/tarea4/cmake-build-debug/test/CMakeFiles/tester.dir/testLU.cpp.o"
   "/home/jeanpaul/Code/c++/tarea4/test/testMain.cpp" "/home/jeanpaul/Code/c++/tarea4/cmake-build-debug/test/CMakeFiles/tester.dir/testMain.cpp.o"
   "/home/jeanpaul/Code/c++/tarea4/test/testMatrix.cpp" "/home/jeanpaul/Code/c++/tarea4/cmake-build-debug/test/CMakeFiles/tester.dir/testMatrix.cpp.o"
+  "/home/jeanpaul/Code/c++/tarea4/test/testSolver.cpp" "/home/jeanpaul/Code/c++/tarea4/cmake-build-debug/test/CMakeFiles/tester.dir/testSolver.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

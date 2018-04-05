@@ -265,6 +265,9 @@
 		<Unit filename="/home/jeanpaul/Code/c++/tarea4/test/testMatrix.cpp">
 			<Option target="tester"/>
 		</Unit>
+		<Unit filename="/home/jeanpaul/Code/c++/tarea4/test/testSolver.cpp">
+			<Option target="tester"/>
+		</Unit>
 		<Unit filename="/home/jeanpaul/Code/c++/tarea4/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

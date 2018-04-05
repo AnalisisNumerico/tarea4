@@ -244,6 +244,33 @@ testMatrix.cpp.s:
 	cd /home/jeanpaul/Code/c++/tarea4/cmake-build-debug && $(MAKE) -f test/CMakeFiles/tester.dir/build.make test/CMakeFiles/tester.dir/testMatrix.cpp.s
 .PHONY : testMatrix.cpp.s
 
+testSolver.o: testSolver.cpp.o
+
+.PHONY : testSolver.o
+
+# target to build an object file
+testSolver.cpp.o:
+	cd /home/jeanpaul/Code/c++/tarea4/cmake-build-debug && $(MAKE) -f test/CMakeFiles/tester.dir/build.make test/CMakeFiles/tester.dir/testSolver.cpp.o
+.PHONY : testSolver.cpp.o
+
+testSolver.i: testSolver.cpp.i
+
+.PHONY : testSolver.i
+
+# target to preprocess a source file
+testSolver.cpp.i:
+	cd /home/jeanpaul/Code/c++/tarea4/cmake-build-debug && $(MAKE) -f test/CMakeFiles/tester.dir/build.make test/CMakeFiles/tester.dir/testSolver.cpp.i
+.PHONY : testSolver.cpp.i
+
+testSolver.s: testSolver.cpp.s
+
+.PHONY : testSolver.s
+
+# target to generate assembly for a file
+testSolver.cpp.s:
+	cd /home/jeanpaul/Code/c++/tarea4/cmake-build-debug && $(MAKE) -f test/CMakeFiles/tester.dir/build.make test/CMakeFiles/tester.dir/testSolver.cpp.s
+.PHONY : testSolver.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -266,6 +293,9 @@ help:
 	@echo "... testMatrix.o"
 	@echo "... testMatrix.i"
 	@echo "... testMatrix.s"
+	@echo "... testSolver.o"
+	@echo "... testSolver.i"
+	@echo "... testSolver.s"
 .PHONY : help
 
 
