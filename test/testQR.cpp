@@ -148,6 +148,4 @@ BOOST_AUTO_TEST_CASE(QR)
   anpi::test::qrTest<double>(anpi::qr<double>);
 }
 
-
-
 BOOST_AUTO_TEST_SUITE_END()

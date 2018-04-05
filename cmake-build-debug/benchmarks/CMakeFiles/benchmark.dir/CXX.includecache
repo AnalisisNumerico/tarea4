@@ -36,6 +36,34 @@ altivec.h
 spe.h
 -
 
+../include/LUCrout.hpp
+cmath
+-
+limits
+-
+functional
+-
+iostream
+-
+Exception.hpp
+../include/Exception.hpp
+Matrix.hpp
+../include/Matrix.hpp
+
+../include/LUDoolittle.hpp
+cmath
+-
+limits
+-
+functional
+-
+algorithm
+-
+Exception.hpp
+../include/Exception.hpp
+Matrix.hpp
+../include/Matrix.hpp
+
 ../include/Matrix.hpp
 cstddef
 -
@@ -84,7 +112,7 @@ type_traits
 iostream
 -
 
-/home/ger534/CLionProjects/tarea4/benchmarks/benchmarkFramework.hpp
+/home/jeanpaul/Code/c++/tarea4/benchmarks/benchmarkFramework.hpp
 chrono
 -
 iostream
@@ -100,11 +128,11 @@ Matrix.hpp
 PlotPy.hpp
 -
 
-/home/ger534/CLionProjects/tarea4/benchmarks/benchmarkMain.cpp
+/home/jeanpaul/Code/c++/tarea4/benchmarks/benchmarkMain.cpp
 boost/test/unit_test.hpp
 -
 
-/home/ger534/CLionProjects/tarea4/benchmarks/benchmarkMatrixAdd.cpp
+/home/jeanpaul/Code/c++/tarea4/benchmarks/benchmarkMatrixAdd.cpp
 boost/test/unit_test.hpp
 -
 iostream
@@ -116,9 +144,13 @@ cstdlib
 complex
 -
 benchmarkFramework.hpp
-/home/ger534/CLionProjects/tarea4/benchmarks/benchmarkFramework.hpp
+/home/jeanpaul/Code/c++/tarea4/benchmarks/benchmarkFramework.hpp
 Matrix.hpp
-/home/ger534/CLionProjects/tarea4/benchmarks/Matrix.hpp
+/home/jeanpaul/Code/c++/tarea4/benchmarks/Matrix.hpp
 Allocator.hpp
-/home/ger534/CLionProjects/tarea4/benchmarks/Allocator.hpp
+/home/jeanpaul/Code/c++/tarea4/benchmarks/Allocator.hpp
+LUCrout.hpp
+/home/jeanpaul/Code/c++/tarea4/benchmarks/LUCrout.hpp
+LUDoolittle.hpp
+/home/jeanpaul/Code/c++/tarea4/benchmarks/LUDoolittle.hpp
 

@@ -153,12 +153,62 @@ test/CMakeFiles/tester.dir/testMatrix.cpp.o.provides: test/CMakeFiles/tester.dir
 test/CMakeFiles/tester.dir/testMatrix.cpp.o.provides.build: test/CMakeFiles/tester.dir/testMatrix.cpp.o
 
 
+test/CMakeFiles/tester.dir/testQR.cpp.o: test/CMakeFiles/tester.dir/flags.make
+test/CMakeFiles/tester.dir/testQR.cpp.o: ../test/testQR.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jeanpaul/Code/c++/tarea4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object test/CMakeFiles/tester.dir/testQR.cpp.o"
+	cd /home/jeanpaul/Code/c++/tarea4/cmake-build-debug/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tester.dir/testQR.cpp.o -c /home/jeanpaul/Code/c++/tarea4/test/testQR.cpp
+
+test/CMakeFiles/tester.dir/testQR.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tester.dir/testQR.cpp.i"
+	cd /home/jeanpaul/Code/c++/tarea4/cmake-build-debug/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jeanpaul/Code/c++/tarea4/test/testQR.cpp > CMakeFiles/tester.dir/testQR.cpp.i
+
+test/CMakeFiles/tester.dir/testQR.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tester.dir/testQR.cpp.s"
+	cd /home/jeanpaul/Code/c++/tarea4/cmake-build-debug/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jeanpaul/Code/c++/tarea4/test/testQR.cpp -o CMakeFiles/tester.dir/testQR.cpp.s
+
+test/CMakeFiles/tester.dir/testQR.cpp.o.requires:
+
+.PHONY : test/CMakeFiles/tester.dir/testQR.cpp.o.requires
+
+test/CMakeFiles/tester.dir/testQR.cpp.o.provides: test/CMakeFiles/tester.dir/testQR.cpp.o.requires
+	$(MAKE) -f test/CMakeFiles/tester.dir/build.make test/CMakeFiles/tester.dir/testQR.cpp.o.provides.build
+.PHONY : test/CMakeFiles/tester.dir/testQR.cpp.o.provides
+
+test/CMakeFiles/tester.dir/testQR.cpp.o.provides.build: test/CMakeFiles/tester.dir/testQR.cpp.o
+
+
+test/CMakeFiles/tester.dir/testSolver.cpp.o: test/CMakeFiles/tester.dir/flags.make
+test/CMakeFiles/tester.dir/testSolver.cpp.o: ../test/testSolver.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jeanpaul/Code/c++/tarea4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object test/CMakeFiles/tester.dir/testSolver.cpp.o"
+	cd /home/jeanpaul/Code/c++/tarea4/cmake-build-debug/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tester.dir/testSolver.cpp.o -c /home/jeanpaul/Code/c++/tarea4/test/testSolver.cpp
+
+test/CMakeFiles/tester.dir/testSolver.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tester.dir/testSolver.cpp.i"
+	cd /home/jeanpaul/Code/c++/tarea4/cmake-build-debug/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jeanpaul/Code/c++/tarea4/test/testSolver.cpp > CMakeFiles/tester.dir/testSolver.cpp.i
+
+test/CMakeFiles/tester.dir/testSolver.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tester.dir/testSolver.cpp.s"
+	cd /home/jeanpaul/Code/c++/tarea4/cmake-build-debug/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jeanpaul/Code/c++/tarea4/test/testSolver.cpp -o CMakeFiles/tester.dir/testSolver.cpp.s
+
+test/CMakeFiles/tester.dir/testSolver.cpp.o.requires:
+
+.PHONY : test/CMakeFiles/tester.dir/testSolver.cpp.o.requires
+
+test/CMakeFiles/tester.dir/testSolver.cpp.o.provides: test/CMakeFiles/tester.dir/testSolver.cpp.o.requires
+	$(MAKE) -f test/CMakeFiles/tester.dir/build.make test/CMakeFiles/tester.dir/testSolver.cpp.o.provides.build
+.PHONY : test/CMakeFiles/tester.dir/testSolver.cpp.o.provides
+
+test/CMakeFiles/tester.dir/testSolver.cpp.o.provides.build: test/CMakeFiles/tester.dir/testSolver.cpp.o
+
+
 # Object files for target tester
 tester_OBJECTS = \
 "CMakeFiles/tester.dir/testAllocator.cpp.o" \
 "CMakeFiles/tester.dir/testLU.cpp.o" \
 "CMakeFiles/tester.dir/testMain.cpp.o" \
-"CMakeFiles/tester.dir/testMatrix.cpp.o"
+"CMakeFiles/tester.dir/testMatrix.cpp.o" \
+"CMakeFiles/tester.dir/testQR.cpp.o" \
+"CMakeFiles/tester.dir/testSolver.cpp.o"
 
 # External object files for target tester
 tester_EXTERNAL_OBJECTS =
@@ -167,13 +217,15 @@ test/tester: test/CMakeFiles/tester.dir/testAllocator.cpp.o
 test/tester: test/CMakeFiles/tester.dir/testLU.cpp.o
 test/tester: test/CMakeFiles/tester.dir/testMain.cpp.o
 test/tester: test/CMakeFiles/tester.dir/testMatrix.cpp.o
+test/tester: test/CMakeFiles/tester.dir/testQR.cpp.o
+test/tester: test/CMakeFiles/tester.dir/testSolver.cpp.o
 test/tester: test/CMakeFiles/tester.dir/build.make
 test/tester: src/libanpi.a
 test/tester: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
 test/tester: /usr/lib/x86_64-linux-gnu/libboost_system.so
 test/tester: /usr/lib/x86_64-linux-gnu/libboost_unit_test_framework.so
 test/tester: test/CMakeFiles/tester.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jeanpaul/Code/c++/tarea4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable tester"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jeanpaul/Code/c++/tarea4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable tester"
 	cd /home/jeanpaul/Code/c++/tarea4/cmake-build-debug/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/tester.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -185,6 +237,8 @@ test/CMakeFiles/tester.dir/requires: test/CMakeFiles/tester.dir/testAllocator.cp
 test/CMakeFiles/tester.dir/requires: test/CMakeFiles/tester.dir/testLU.cpp.o.requires
 test/CMakeFiles/tester.dir/requires: test/CMakeFiles/tester.dir/testMain.cpp.o.requires
 test/CMakeFiles/tester.dir/requires: test/CMakeFiles/tester.dir/testMatrix.cpp.o.requires
+test/CMakeFiles/tester.dir/requires: test/CMakeFiles/tester.dir/testQR.cpp.o.requires
+test/CMakeFiles/tester.dir/requires: test/CMakeFiles/tester.dir/testSolver.cpp.o.requires
 
 .PHONY : test/CMakeFiles/tester.dir/requires
 

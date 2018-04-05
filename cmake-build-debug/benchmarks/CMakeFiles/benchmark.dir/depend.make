@@ -8,6 +8,8 @@ benchmarks/CMakeFiles/benchmark.dir/benchmarkMatrixAdd.cpp.o: ../include/AnpiCon
 benchmarks/CMakeFiles/benchmark.dir/benchmarkMatrixAdd.cpp.o: ../include/Exception.hpp
 benchmarks/CMakeFiles/benchmark.dir/benchmarkMatrixAdd.cpp.o: ../include/HasType.hpp
 benchmarks/CMakeFiles/benchmark.dir/benchmarkMatrixAdd.cpp.o: ../include/Intrinsics.hpp
+benchmarks/CMakeFiles/benchmark.dir/benchmarkMatrixAdd.cpp.o: ../include/LUCrout.hpp
+benchmarks/CMakeFiles/benchmark.dir/benchmarkMatrixAdd.cpp.o: ../include/LUDoolittle.hpp
 benchmarks/CMakeFiles/benchmark.dir/benchmarkMatrixAdd.cpp.o: ../include/Matrix.hpp
 benchmarks/CMakeFiles/benchmark.dir/benchmarkMatrixAdd.cpp.o: ../include/Matrix.tpp
 benchmarks/CMakeFiles/benchmark.dir/benchmarkMatrixAdd.cpp.o: ../include/PlotPy.hpp

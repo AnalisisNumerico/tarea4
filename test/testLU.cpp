@@ -87,7 +87,8 @@ namespace anpi {
 
       // Test if a non-square matrix is successfully detected
       {
-        Matrix<T> A = {{1,7,6,4},{2,17,27,17}};
+        Matrix<T> A = {{ 1, 7, 6, 4},
+                       { 2,17,27,17}};
         std::vector<size_t> p;
         try {
           decomp(A,LU,p);
@@ -100,7 +101,10 @@ namespace anpi {
 
       // Test pivoting
       {
-        anpi::Matrix<T> A = { {-1,-2,1,2},{ 2, 0,1,2},{-1,-1,0,1},{ 1, 1,1,1} };
+        anpi::Matrix<T> A = { {-1,-2, 1, 2},
+                              { 2, 0, 1, 2},
+                              {-1,-1, 0, 1},
+                              { 1, 1, 1, 1} };
         std::vector<size_t> p;
         decomp(A,LU,p);
 
@@ -111,16 +115,10 @@ namespace anpi {
       // Test decomposition
       {
         // same matrix as before, but already permuted to force a clean decomposition
-        anpi::Matrix<T> A = { { 2, 0,1,2},{-1,-2,1,2},{ 1, 1,1,1},{-1,-1,0,1} };
-
-        /* ELIMINAR<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-        std::cout << "-----------inicial-----------" << std::endl;
-        for(int i = 0; i < A.rows(); i++) {
-          for(int j = 0; j < A.cols(); j++) {
-            std::cout << A[i][j] << " ";
-          }
-          std::cout << std::endl;
-        }*/
+        anpi::Matrix<T> A = { { 2, 0, 1, 2},
+                              {-1,-2, 1, 2},
+                              { 1, 1, 1, 1},
+                              {-1,-1, 0, 1} };
 
         std::vector<size_t> p;
         decomp(A,LU,p);

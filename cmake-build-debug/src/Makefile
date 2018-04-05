@@ -137,19 +137,19 @@ anpi/fast:
 .PHONY : anpi/fast
 
 # Convenience name for target.
-src/CMakeFiles/tarea03.dir/rule:
-	cd /home/jeanpaul/Code/c++/tarea4/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/tarea03.dir/rule
-.PHONY : src/CMakeFiles/tarea03.dir/rule
+src/CMakeFiles/tarea04.dir/rule:
+	cd /home/jeanpaul/Code/c++/tarea4/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/tarea04.dir/rule
+.PHONY : src/CMakeFiles/tarea04.dir/rule
 
 # Convenience name for target.
-tarea03: src/CMakeFiles/tarea03.dir/rule
+tarea04: src/CMakeFiles/tarea04.dir/rule
 
-.PHONY : tarea03
+.PHONY : tarea04
 
 # fast build rule for target.
-tarea03/fast:
-	cd /home/jeanpaul/Code/c++/tarea4/cmake-build-debug && $(MAKE) -f src/CMakeFiles/tarea03.dir/build.make src/CMakeFiles/tarea03.dir/build
-.PHONY : tarea03/fast
+tarea04/fast:
+	cd /home/jeanpaul/Code/c++/tarea4/cmake-build-debug && $(MAKE) -f src/CMakeFiles/tarea04.dir/build.make src/CMakeFiles/tarea04.dir/build
+.PHONY : tarea04/fast
 
 main.o: main.cpp.o
 
@@ -158,7 +158,7 @@ main.o: main.cpp.o
 # target to build an object file
 main.cpp.o:
 	cd /home/jeanpaul/Code/c++/tarea4/cmake-build-debug && $(MAKE) -f src/CMakeFiles/anpi.dir/build.make src/CMakeFiles/anpi.dir/main.cpp.o
-	cd /home/jeanpaul/Code/c++/tarea4/cmake-build-debug && $(MAKE) -f src/CMakeFiles/tarea03.dir/build.make src/CMakeFiles/tarea03.dir/main.cpp.o
+	cd /home/jeanpaul/Code/c++/tarea4/cmake-build-debug && $(MAKE) -f src/CMakeFiles/tarea04.dir/build.make src/CMakeFiles/tarea04.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -168,7 +168,7 @@ main.i: main.cpp.i
 # target to preprocess a source file
 main.cpp.i:
 	cd /home/jeanpaul/Code/c++/tarea4/cmake-build-debug && $(MAKE) -f src/CMakeFiles/anpi.dir/build.make src/CMakeFiles/anpi.dir/main.cpp.i
-	cd /home/jeanpaul/Code/c++/tarea4/cmake-build-debug && $(MAKE) -f src/CMakeFiles/tarea03.dir/build.make src/CMakeFiles/tarea03.dir/main.cpp.i
+	cd /home/jeanpaul/Code/c++/tarea4/cmake-build-debug && $(MAKE) -f src/CMakeFiles/tarea04.dir/build.make src/CMakeFiles/tarea04.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -178,7 +178,7 @@ main.s: main.cpp.s
 # target to generate assembly for a file
 main.cpp.s:
 	cd /home/jeanpaul/Code/c++/tarea4/cmake-build-debug && $(MAKE) -f src/CMakeFiles/anpi.dir/build.make src/CMakeFiles/anpi.dir/main.cpp.s
-	cd /home/jeanpaul/Code/c++/tarea4/cmake-build-debug && $(MAKE) -f src/CMakeFiles/tarea03.dir/build.make src/CMakeFiles/tarea03.dir/main.cpp.s
+	cd /home/jeanpaul/Code/c++/tarea4/cmake-build-debug && $(MAKE) -f src/CMakeFiles/tarea04.dir/build.make src/CMakeFiles/tarea04.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -191,7 +191,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... test"
 	@echo "... anpi"
-	@echo "... tarea03"
+	@echo "... tarea04"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

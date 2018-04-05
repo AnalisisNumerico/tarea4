@@ -40,3 +40,15 @@ test/CMakeFiles/tester.dir/testQR.cpp.o: ../include/bits/MatrixArithmetic.hpp
 test/CMakeFiles/tester.dir/testQR.cpp.o: ../include/qr.hpp
 test/CMakeFiles/tester.dir/testQR.cpp.o: ../test/testQR.cpp
 
+test/CMakeFiles/tester.dir/testSolver.cpp.o: ../include/Allocator.hpp
+test/CMakeFiles/tester.dir/testSolver.cpp.o: ../include/AnpiConfig.hpp
+test/CMakeFiles/tester.dir/testSolver.cpp.o: ../include/Exception.hpp
+test/CMakeFiles/tester.dir/testSolver.cpp.o: ../include/HasType.hpp
+test/CMakeFiles/tester.dir/testSolver.cpp.o: ../include/Intrinsics.hpp
+test/CMakeFiles/tester.dir/testSolver.cpp.o: ../include/LUDoolittle.hpp
+test/CMakeFiles/tester.dir/testSolver.cpp.o: ../include/Matrix.hpp
+test/CMakeFiles/tester.dir/testSolver.cpp.o: ../include/Matrix.tpp
+test/CMakeFiles/tester.dir/testSolver.cpp.o: ../include/Solver.hpp
+test/CMakeFiles/tester.dir/testSolver.cpp.o: ../include/bits/MatrixArithmetic.hpp
+test/CMakeFiles/tester.dir/testSolver.cpp.o: ../test/testSolver.cpp
+

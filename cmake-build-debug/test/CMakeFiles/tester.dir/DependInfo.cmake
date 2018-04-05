@@ -4,11 +4,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/ger534/CLionProjects/tarea4/test/testAllocator.cpp" "/home/ger534/CLionProjects/tarea4/cmake-build-debug/test/CMakeFiles/tester.dir/testAllocator.cpp.o"
-  "/home/ger534/CLionProjects/tarea4/test/testLU.cpp" "/home/ger534/CLionProjects/tarea4/cmake-build-debug/test/CMakeFiles/tester.dir/testLU.cpp.o"
-  "/home/ger534/CLionProjects/tarea4/test/testMain.cpp" "/home/ger534/CLionProjects/tarea4/cmake-build-debug/test/CMakeFiles/tester.dir/testMain.cpp.o"
-  "/home/ger534/CLionProjects/tarea4/test/testMatrix.cpp" "/home/ger534/CLionProjects/tarea4/cmake-build-debug/test/CMakeFiles/tester.dir/testMatrix.cpp.o"
-  "/home/ger534/CLionProjects/tarea4/test/testQR.cpp" "/home/ger534/CLionProjects/tarea4/cmake-build-debug/test/CMakeFiles/tester.dir/testQR.cpp.o"
+  "/home/jeanpaul/Code/c++/tarea4/test/testAllocator.cpp" "/home/jeanpaul/Code/c++/tarea4/cmake-build-debug/test/CMakeFiles/tester.dir/testAllocator.cpp.o"
+  "/home/jeanpaul/Code/c++/tarea4/test/testLU.cpp" "/home/jeanpaul/Code/c++/tarea4/cmake-build-debug/test/CMakeFiles/tester.dir/testLU.cpp.o"
+  "/home/jeanpaul/Code/c++/tarea4/test/testMain.cpp" "/home/jeanpaul/Code/c++/tarea4/cmake-build-debug/test/CMakeFiles/tester.dir/testMain.cpp.o"
+  "/home/jeanpaul/Code/c++/tarea4/test/testMatrix.cpp" "/home/jeanpaul/Code/c++/tarea4/cmake-build-debug/test/CMakeFiles/tester.dir/testMatrix.cpp.o"
+  "/home/jeanpaul/Code/c++/tarea4/test/testQR.cpp" "/home/jeanpaul/Code/c++/tarea4/cmake-build-debug/test/CMakeFiles/tester.dir/testQR.cpp.o"
+  "/home/jeanpaul/Code/c++/tarea4/test/testSolver.cpp" "/home/jeanpaul/Code/c++/tarea4/cmake-build-debug/test/CMakeFiles/tester.dir/testSolver.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -19,7 +20,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/ger534/CLionProjects/tarea4/cmake-build-debug/src/CMakeFiles/anpi.dir/DependInfo.cmake"
+  "/home/jeanpaul/Code/c++/tarea4/cmake-build-debug/src/CMakeFiles/anpi.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

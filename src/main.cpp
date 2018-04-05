@@ -8,15 +8,8 @@
  * @Date  : 24.02.2018
  */
 
-#include <cstdlib>
-#include <iostream>
-#include <vector>
-
-#include "LUDoolittle.hpp"
-
 int main() {
 
-
-  return EXIT_FAILURE;
+  return 0;
 }
 
